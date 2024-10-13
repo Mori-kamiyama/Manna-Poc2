@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アンケート</title>
+    <style>
+        .question {
+            display: none;
+        }
+        .question.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<script>
+    let currentQuestion = 1;
+
+    document.getElementById("next1").addEventListener("click", function() {
+        showQuestion(2);
+    });
+
+    document.getElementById("back1").addEventListener("click", function() {
+        showQuestion(1);
+    });
+
+    document.getElementById("next2").addEventListener("click", function() {
+        showQuestion(3);
+    });
+
+    document.getElementById("back2").addEventListener("click", function() {
+        showQuestion(2);
+    });
+
+    document.getElementById("submit").addEventListener("click", function() {
+        showResult();
+    });
+
+    document.getElementById("back3").addEventListener("click", function() {
+        showQuestion(3);
+    });
+
+    function showQuestion(questionNumber) {
+        document.querySelectorAll(".question").forEach(function(q) {
+            q.classList.remove("active");
+        });
+        document.getElementById("question" + questionNumber).classList.add("active");
+    }
+
+    function showResult() {
+        const q1 = document.querySelector('input[name="q1"]:checked')?.value || '未回答';
+        const q2 = document.querySelector('input[name="q2"]:checked')?.value || '未回答';
+        const q3 = document.querySelector('input[name="q3"]:checked')?.value || '未回答';
+
+        const resultText = `好きな色: ${q1}, 好きな食べ物: ${q2}, 趣味: ${q3}`;
+        document.getElementById("resultText").textContent = resultText;
+        showQuestion("result");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+body {
+    width: 90%;
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    padding: 15vh 0;
+    margin: 0 auto;
+    width: 60%;
+    font-family: YuGothic, sans-serif;
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1em;
+    background: #5f9948;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+button:hover {
+    outline: 2px solid #3dcc42;
+    outline-offset: -2px;
+    background: none;
+    color: #3dcc42;
+}
+
+section {
+    padding: 5vh 0;
+}
+
+section> p, #ans-whatis> p, #ans-c> p , #ans-ranking> p {
+    padding: 3vh 0;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: xx-large;
+}
+
+.quiz {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #eeeeee;
+}
+
+label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    margin: 10px 0;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin: 3px 0 0 0;
+}
+
+input[type="radio"] {
+    position: relative;
+    border: 1px solid #000;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="radio"]:checked:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #5f9948;
+    content: '';
+}
+
+input[type="checkbox"] {
+    position: relative;
+    border: 1px solid #000;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="checkbox"]:checked:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 9px;
+    height: 9px;
+    background-color: #5f9948;
+    content: '';
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        width: 90%;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: x-large;
+    }
+
+    .quiz {
+        width: 90%;
+    }
+
+    label {
+        align-items: flex-start;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-top: 3px;
+    }
+}

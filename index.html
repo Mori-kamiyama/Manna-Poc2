@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        #whatis,#ranking,#point,#final,#ans-whatis,#ans-ranking,#ans-c {
+            display: none;
+        }
+        .question {
+            display: none;
+        }
+        .question.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <button onclick="location.href='./index.html'" style="cursor: pointer;" class="header-button">
+        <img src="./Icon.png" class="logo">
+    </button>
+    <div class="date-info">
+        <p>Sunday, September 1, 2024</p>
+        <p>No.32</p>
+    </div>
+</header>
+<hr>
+<hr>
+
+<main>
+    <section class="introduction">
+        <img src="picture/オープニングの絵.webp">
+        <h1>プログラミング言語の流れ：<br>未来を創るコードの世界へ</h1>
+        <p>プログラミングの世界は日々進化し、私たちの生活を豊かにしています。この記事では、プログラミング言語の基本から最新のトレンド、そして言語選びのポイントまでをわかりやすく解説します。初心者の方も、これから学び始める方も、ぜひ参考にしてください！</p>
+        <div></div>
+        <button onclick="showElement('whatis')">スタートする</button>
+    </section>
+    <section class="whatis" id="whatis">
+        <h1>プログラミング言語って何？</h1>
+        <p>ではまず、プログラミング言語とはなんでしょうか？</p>
+        <div class="quiz">
+            <b>「プログラミング言語とはなんですか？」</b>
+            <form name="quiz1">
+                <label>
+                    <input type="radio" name="language" value="1">
+                    コンピューターと人のための言葉
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="language" value="2">
+                    コンピュータの画面に絵やデザインを描くための道具
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="language" value="3">
+                    コンピュータと直接会話できるようになる特別な音声ツール
+                </label>
+                <br>
+                <button type="button" onclick="checkAnswerRadio('1','language', 'ans-whatis', 'result') ">Submit</button>
+            </form>
+            <p id="result"></p>
+        </div>
+        <div id="ans-whatis">
+            <p>プログラミング言語とは、コンピュータに指示を出すための「言葉」です。
+                私たちが普段会話するように、プログラミングもまたテクノロジーの世界でいう「言葉」なのです。
+
+                プログラミング言語はコンピュータとコミュニケーションを取る手段です。日本語や英語のように、
+                多くのプログラミング言語が存在し、それぞれに特性や用途があります。</p>
+            <img src="./picture/会話の絵.webp">
+            <p>コンピューターは素晴らしい速度で発展していきました。
+                そして、プログラミング言語はコンピューターの進化と共に発展していったのです。
+                最初に誕生したのが機械語（0101…）。初期のプログラミングは非常に低レベルで、複雑でした。
+                だから、テクノロジーがどれほど画期的で素晴らしいものか理解されるのにはしばし時間がかかってしまったのです。
+                しかし、技術の進歩に伴い、より人間に理解しやすい高級言語が次々と登場しました。
+                今日では、PythonやJavaScript、Javaなど、多種多様な言語が存在し、さまざまな用途に対応しているのです。</p>
+            <button onclick="showElement('ranking')">next</button>
+        </div>
+    </section>
+    <section class="ranking" id="ranking">
+        <h1>人気のプログラミング言語ランキング</h1>
+        <p>プログラミング言語について詳しく知る前にあなたはどんな言語を聞いたことがありますか？</p>
+        <div class="quiz">
+            <b>「あなたが聞いたことのあるプログラミング言語はありますか？」</b>
+            <form name="quiz2">
+                <label>
+                    <input type="checkbox" name="everbeen" value="python">
+                    python
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="everbeen" value="C">
+                    C
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="everbeen" value="JavaScript">
+                    JavaScript
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="everbeen" value="Swift">
+                    Swift
+                </label>
+                <br>
+                <button type="button" onclick="checkAnswerChackbox('everbeen', 'ans-ranking', 'result2') ">Submit</button>
+            </form>
+            <p id="result2"></p>
+        </div>
+        <div id="ans-ranking">
+            <p>あなたも聞いたことがあるように、プログラミングの言語はひとつではありません。私たち人間がたくさんの言葉を扱っていることと同じで、プログラミング言語にも多くの種類があります。
+
+                その種類を見てみましょう！</p>
+            <canvas id="language-ranging" width="400" height="200"></canvas>
+
+            <p>最も人気なのはPythonで、javaやC++といった言語が続いていきます。
+                しかし、高専で最初に学ぶC言語は9番です。
+                これはなぜでしょう？</p>
+
+            <div class="quiz">
+                <b>「なぜ人気でないC言語を私たちは学ぶのでしょう？」</b>
+                <form name="quiz3">
+                    <label>
+                        <input type="radio" name="c" value="1">
+                        初心者でも簡単に使える言語で、コードを書くためのサポートが豊富に揃っているから。
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="c" value="2">
+                        他の多くのプログラミング言語の基礎となっており、機械語に近い基本から学べるから。
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" name="c" value="3">
+                        とてもシンプルで、すべてのプログラミング問題を解決する最も効率的な方法だから。
+                    </label>
+                    <br>
+                    <button type="button" onclick="checkAnswerRadio('2','c', 'ans-c', 'result3') ">Submit</button>
+                </form>
+                <p id="result3"></p>
+            </div>
+            <div id="ans-c">
+                <p>C言語は広く使われた言語の中では非常に古く様々な機械に使われ、機械語に近いところから、高度なことまででき、プログラミングの大枠を学ぶのに最適だからです。
+                    だから、C言語から学んでいるのです。</p>
+                <button onclick="showElement('point')">next</button>
+            </div>
+        </div>
+    </section>
+    <section class="point" id="point">
+        <h1>言語選択のポイントとアドバイス</h1>
+        <p>プログラミング言語を選ぶ際には、いくつかのポイントを考慮することが重要です。以下の基準を参考に、自分に最適な言語を見つけましょう</p>
+        <p><b>学習のしやすさ</b><br>
+            プログラミング言語はその言語特有の癖があります。癖を覚えるのは大変なので簡単なものから始めるといいでしょう。<br>
+            <b>プロジェクトの目的</b><br>
+            自分が何を作りたいかによって、選ぶべき言語が変わります。Unityなどといった開発アプリでどんな言語をサポートしているか、フレームワークやパッケージというツールが存在するかなどいろんな要素を考慮して選ぶといいでしょう。<br>
+            <b>コミュニティとサポート</b><br>
+            活発なコミュニティがある言語は、学習中に困ったときに助けを得やすいです。日本語の資料や技術Blogなどが多い言語は悩んだ時も対処しやすいです。<br>
+            <b>将来性と需要</b><br>
+            注目されている言語、現在需要が高い言語はこれからも様々なアプリや機械にサポートされ融通か聞くようになります。マイナー言語は長期的にはできることが少なくなりやすい傾向にあります。<br>
+            <b>高専生へのおすすめ</b><br>
+            こういったことも含めて、おすすめの言語診断テストをやってみましょう！！</p>
+        <div class="quiz">
+            <div id="question1" class="question active">
+                <p>質問1: WEBサイト、WEBアプリを作りたいですか？</p>
+                <input type="radio" name="q1" value="webYes"> はい<br>
+                <input type="radio" name="q1" value="webNo"> いいえ<br>
+                <button onclick="nextQuestion(1)">次へ</button>
+            </div>
+
+            <div id="question2" class="question">
+                <p>質問2: モバイルアプリを作りたいですか？</p>
+                <input type="radio" name="q2" value="mobileYes"> はい<br>
+                <input type="radio" name="q2" value="mobileNo"> いいえ<br>
+                <button onclick="prevQuestion(1)">戻る</button>
+                <button onclick="nextQuestion(2)">次へ</button>
+            </div>
+
+            <div id="question3" class="question">
+                <p>質問3: ゲームを作りたい？</p>
+                <input type="radio" name="q3" value="gameYes"> はい<br>
+                <input type="radio" name="q3" value="gameNo"> いいえ<br>
+                <button onclick="prevQuestion(2)">戻る</button>
+                <button onclick="nextQuestion(3)">次へ</button>
+            </div>
+
+            <div id="question4" class="question">
+                <p>質問4: データ分析、AI制作をしたい？</p>
+                <input type="radio" name="q4" value="dateYes"> はい<br>
+                <input type="radio" name="q4" value="dateNo"> いいえ<br>
+                <button onclick="prevQuestion(3)">戻る</button>
+                <button onclick="nextQuestion(4)">次へ</button>
+            </div>
+            <div id="question5" class="question">
+                <p>質問5: サーバーやネットワークのプログラミングをしたい？</p>
+                <input type="radio" name="q5" value="serverYes"> はい<br>
+                <input type="radio" name="q5" value="serverNo"> いいえ<br>
+                <button onclick="prevQuestion(4)">戻る</button>
+                <button onclick="nextQuestion(5)">次へ</button>
+            </div>
+            <div id="question6" class="question">
+                <p>質問6: 高いパフォーマンスの必要なものを作りたい？</p>
+                <input type="radio" name="q6" value="performanceYes"> はい<br>
+                <input type="radio" name="q6" value="performanceNo"> いいえ<br>
+                <button onclick="prevQuestion(5)">戻る</button>
+                <button onclick="nextQuestion(6)">次へ</button>
+            </div>
+            <div id="question7" class="question">
+                <p>質問7: クロスプラットフォームのアプリを作りたい？</p>
+                <input type="radio" name="q7" value="crossYes"> はい<br>
+                <input type="radio" name="q7" value="crossNo"> いいえ<br>
+                <button onclick="prevQuestion(6)">戻る</button>
+                <button onclick="nextQuestion(7)">次へ</button>
+            </div>
+            <div id="question8" class="question">
+                <p>質問8: 柔軟でシンプルなコードを書きたい？</p>
+                <input type="radio" name="q8" value="simpleYes"> はい<br>
+                <input type="radio" name="q8" value="simpleNo"> いいえ<br>
+                <button onclick="prevQuestion(7)">戻る</button>
+                <button onclick="nextQuestion(8)">次へ</button>
+            </div>
+
+            <div id="question9" class="question">
+                <p>質問8: ロボットなどの機械制御がしたい？</p>
+                <input type="radio" name="q9" value="simpleYes"> はい<br>
+                <input type="radio" name="q9" value="simpleNo"> いいえ<br>
+                <button onclick="prevQuestion(8)">戻る</button>
+                <button onclick="nextQuestion(9)">次へ</button>
+            </div>
+
+
+            <div id="result4" class="question">
+                <h3>結果</h3>
+                <p id="resultText"></p>
+                <button onclick="prevQuestion(9)">戻る</button>
+            </div>
+        </div>
+        <button onclick="showElement('final')">next</button>
+    </section>
+    <section class="final" id="final">
+        <h1>プログラミングの第一歩を踏み出そう</h1>
+        <p>この時間で、これから学びたい道は見つかりましたか？
+            プログラミングの世界は広大で、学べば学ぶほど新しい発見があります。
+            この旅は長い旅路ですが、コツコツ続けることで必ず大きなことを成し遂げられます。
+            この記事からプログラミングを始めてみましょう！</p>
+        <img src="./picture/エンディングの絵.webp">
+    </section>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>

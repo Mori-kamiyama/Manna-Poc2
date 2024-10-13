@@ -1,0 +1,72 @@
+header {
+    padding-top: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Wrap the elements if necessary */
+}
+
+.logo {
+    width: 260px; /* Adjusted width for smaller screens */
+}
+
+
+.date-info {
+    font-family: "IBM Plex Mono", monospace;
+    text-align: right;
+    font-size: 1rem;
+    color: #555;
+    margin: auto 0;
+}
+
+.date-info p {
+    vertical-align: middle;
+    margin: 2px;
+}
+
+hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.header-button {
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header {
+        padding-top: 2vh;
+    }
+
+    .logo {
+        width: 170px; /* Smaller width for smaller screens */
+    }
+
+
+    .date-info {
+        font-size: 0.9rem; /* Smaller font size */
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding-top: 0vh;
+        display: flex;
+        justify-content: center !important;
+        align-items: center;
+    }
+
+    .logo {
+        width: 240px; /* Even smaller width */
+    }
+
+    .date-info {
+        display: none;
+    }
+}
